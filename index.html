@@ -35,9 +35,23 @@ body{margin:0}
  .lpm-hero__in{grid-template-columns:minmax(0,1fr) minmax(0,568px);gap:44px}
  .lpm-hero__conteudo{max-width:520px}
 }
-/* família: ilustração no lugar das telas */
-.ent-familia-ilustra{display:grid;place-items:center}
-.ent-familia-ilustra img{width:min(420px,100%);height:auto}
+/* família: as telas de insight do responsável */
+.ent-telas-familia{display:flex;flex-direction:column;gap:18px}
+.ent-telas-familia img{width:100%;border-radius:14px;border:1px solid var(--lpm-borda);background:#fff;box-shadow:0 24px 50px -24px color-mix(in srgb,var(--lpm-navy) 35%,transparent)}
+.ent-telas-familia img:first-child{transform:rotate(-.8deg)}
+.ent-telas-familia img:last-child{transform:rotate(.7deg)}
+/* tela em largura cheia */
+.ent-tela-larga{margin-top:38px}
+.ent-tela-larga img{width:100%;border-radius:16px;border:1px solid var(--lpm-borda);background:#fff;box-shadow:0 28px 60px -26px color-mix(in srgb,var(--lpm-navy) 38%,transparent)}
+.ent-legenda{margin:16px 0 0;text-align:center;font:500 14.5px var(--lpm-font-body);color:var(--lpm-tinta-suave)}
+/* gamificação */
+.ent-gami{display:grid;gap:22px;margin-top:36px}
+@media(min-width:1024px){.ent-gami{grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr);align-items:center;gap:36px}}
+.ent-gami img{width:100%;border-radius:14px;border:1px solid var(--lpm-borda);background:#fff;box-shadow:0 24px 50px -24px color-mix(in srgb,var(--lpm-navy) 32%,transparent)}
+.ent-gami ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:15px}
+.ent-gami li{display:flex;gap:11px;font:400 15.5px/1.55 var(--lpm-font-body);color:var(--lpm-tinta-suave)}
+.ent-gami li:before{content:"\2726";color:var(--lpm-vivo);font-weight:700;flex:none}
+.ent-gami li b{color:var(--lpm-navy);font-weight:600}
 
 /* centro da órbita: o espaço do aluno num celular, apoiado no pedestal */
 .lpm-arte__livro.ent-fone{width:min(252px,66vw);height:430px;display:flex;flex-direction:column;background:#fff;border:8px solid var(--lpm-navy);border-radius:30px;overflow:hidden;box-shadow:0 26px 50px -22px color-mix(in srgb,var(--lpm-navy) 55%,transparent);text-align:left}
@@ -113,10 +127,9 @@ body{margin:0}
   </div>
   <figure class="lpm-hero__capas ent-hero-tela">
    <div class="ent-telas">
-    <img src="img/produto/relatorio-aluno.webp" alt="Desempenho do aluno, distribuição na turma e participação" loading="eager">
-    <img src="img/produto/habilidades.webp" alt="Histórico de atividades e habilidades da BNCC do aluno" loading="eager">
+    <img src="img/tela/insight-evolucao.png" alt="Desempenho do aluno ao longo do tempo comparado à média da turma" loading="eager">
    </div>
-   <figcaption>Os insights do seu filho, em tempo real</figcaption>
+   <figcaption>A evolução do seu filho, comparada à turma</figcaption>
   </figure>
  </div>
 </section>
@@ -309,8 +322,29 @@ body{margin:0}
     </div>
    </div>
   </div>
-  <div class="ent-familia-ilustra lpm-reveal" style="--d:0.2s">
-   <img src="img/ilustra/familia-acompanha.webp" alt="Família acompanhando o desenvolvimento do aluno" loading="lazy">
+  <div class="ent-telas-familia lpm-reveal" style="--d:0.2s">
+   <img src="img/tela/notas-responsavel.png" alt="Notas por matéria e por prova, com entrada para os insights" loading="lazy">
+   <img src="img/tela/insight-topicos.png" alt="Tópicos com maior taxa de acerto do aluno" loading="lazy">
+  </div>
+ </div>
+</section>
+
+<!-- ═══ GAMIFICAÇÃO ═══ -->
+<section class="lpm-secao lpm-secao--gelo">
+ <div class="lpm-wrap">
+  <div class="lpm-reveal">
+   <span class="lpm-kicker">Vontade de estudar</span>
+   <h2>Estudar vira algo que ele quer fazer.</h2>
+   <p class="lpm-secao__lead">A plataforma tem nível, pontos e sequência de dias praticados. O seu filho sobe de faixa, mantém a sequência e vê onde está em relação à turma — sem ninguém precisar ficar cobrando.</p>
+  </div>
+  <div class="ent-gami lpm-reveal" style="--d:0.1s">
+   <img src="img/tela/gamificacao.png" alt="Nível do aluno, pontos de experiência e ranking de prática da turma" loading="lazy">
+   <ul>
+    <li><b>Nível e pontos</b> a cada atividade concluída</li>
+    <li><b>Sequência de dias</b> praticados, com recompensa no fim</li>
+    <li><b>Campeões de prática</b> da turma, para quem se motiva competindo</li>
+    <li><b>O próprio jogo puxa o hábito</b>, em vez da cobrança em casa</li>
+   </ul>
   </div>
  </div>
 </section>
@@ -355,26 +389,9 @@ body{margin:0}
    <h2>Inteligência artificial que ensina — e não entrega a resposta.</h2>
    <p class="lpm-secao__lead">A dúvida de toda família quando ouve que a escola usa IA é se o filho vai aprender ou vai colar. Aqui o tutor devolve a pergunta, a prova online tem trava, e você vê o que ele fez na plataforma.</p>
   </div>
-  <div class="ent-duo lpm-reveal" style="--d:0.1s">
-   <div class="ent-card">
-    <div class="ent-card__t">Na prova online</div>
-    <div class="ent-card__s">Duas travas sempre ativas</div>
-    <div class="ent-passos">
-    <div class="ent-passo"><b>1</b>Não é possível colar texto de fora</div>
-    <div class="ent-passo"><b>2</b>Saídas da página ficam registradas</div>
-    </div>
-    <div class="ent-alerta"><span>A página saiu de foco 3 vezes durante a avaliação — visível para o professor.</span></div>
-   </div>
-   <div class="ent-card">
-    <div class="ent-card__t">O que a família vê</div>
-    <div class="ent-card__s">Uso da plataforma nesta semana</div>
-    <table class="ent-tabela">
-    <tr><th>Quando</th><th>O que fez</th></tr>
-    <tr><td><b>Ter · 19h40</b></td><td>Plano de estudo de Ciências</td></tr>
-    <tr><td><b>Qua · 20h15</b></td><td>12 exercícios de Matemática</td></tr>
-    <tr><td><b>Qui · 18h05</b></td><td>Revisão com o tutor</td></tr>
-    </table>
-   </div>
+  <div class="ent-tela-larga lpm-reveal" style="--d:0.1s">
+   <img src="img/tela/uso-da-ia.png" alt="Histórico de uso da IA pelo aluno, com data, ferramenta e assunto" loading="lazy">
+   <p class="ent-legenda">Cada uso fica registrado: quando foi, qual ferramenta e sobre o que. Você abre e vê.</p>
   </div>
  </div>
 </section>
