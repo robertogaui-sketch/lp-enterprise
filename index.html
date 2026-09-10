@@ -27,8 +27,27 @@ body{margin:0}
 .ent-hero-tela img{width:100%;border-radius:14px;box-shadow:0 30px 70px -30px color-mix(in srgb,var(--lpm-navy) 55%,transparent),0 10px 24px -14px color-mix(in srgb,var(--lpm-navy) 30%,transparent)}
 .ent-hero-tela figcaption{margin:14px 0 0;font:600 13px var(--lpm-font-body);color:var(--lpm-texto-claro-2);text-align:center}
 
-/* centro da órbita: ilustração em vez de capa de livro */
-.lpm-arte__livro.ent-centro{width:min(210px,54vw);border-radius:999px;aspect-ratio:1;object-fit:cover;background:#fff;border:6px solid #fff}
+/* centro da órbita: o espaço do aluno num celular, apoiado no pedestal */
+.lpm-arte__livro.ent-fone{width:min(252px,66vw);height:430px;display:flex;flex-direction:column;background:#fff;border:8px solid var(--lpm-navy);border-radius:30px;overflow:hidden;box-shadow:0 26px 50px -22px color-mix(in srgb,var(--lpm-navy) 55%,transparent);text-align:left}
+.ent-fone__topo{height:18px;background:var(--lpm-navy)}
+.ent-fone__cab{display:flex;align-items:center;gap:9px;padding:11px 13px 10px;border-bottom:1px solid var(--lpm-borda-suave)}
+.ent-fone__av{width:28px;height:28px;border-radius:50%;background:var(--lpm-vivo);color:#fff;display:grid;place-items:center;font:700 11px var(--lpm-font-display);flex:none}
+.ent-fone__cab b{display:block;font:700 12.5px var(--lpm-font-display);color:var(--lpm-navy);line-height:1.25}
+.ent-fone__cab s{display:block;text-decoration:none;font-size:10px;color:var(--lpm-tinta-suave)}
+.ent-fone__corpo{padding:12px 13px 0;flex:1;display:flex;flex-direction:column}
+.ent-fone__lara{display:flex;gap:7px;align-items:flex-start;margin-bottom:11px}
+.ent-fone__lara:before{content:"";width:22px;height:22px;border-radius:50%;background:linear-gradient(135deg,var(--lpm-vivo),var(--lpm-destaque));flex:none}
+.ent-fone__bolha{font-size:10.5px;line-height:1.45;background:var(--lpm-gelo);border-radius:10px;padding:7px 9px;color:var(--lpm-tinta-suave)}
+.ent-fone__item{display:flex;align-items:center;gap:8px;font-size:10.5px;color:var(--lpm-tinta-suave);border:1px solid var(--lpm-borda-suave);border-radius:9px;padding:8px 9px;margin-bottom:6px}
+.ent-fone__item i{width:16px;height:16px;border-radius:5px;background:var(--lpm-vivo);color:#fff;display:grid;place-items:center;font:700 8.5px var(--lpm-font-display);font-style:normal;flex:none}
+.ent-fone__item.feito{color:var(--lpm-tinta-suave);opacity:.72}
+.ent-fone__item.feito i{background:var(--lpm-destaque)}
+.ent-fone__barra{height:6px;border-radius:99px;background:var(--lpm-gelo);margin-top:11px;overflow:hidden}
+.ent-fone__barra s{display:block;width:25%;height:100%;border-radius:99px;background:var(--lpm-vivo)}
+.ent-fone__nota{font-size:9.5px;color:var(--lpm-tinta-suave);margin-top:6px}
+.ent-fone__nav{margin-top:auto;display:flex;border-top:1px solid var(--lpm-borda-suave);padding:9px 0 11px}
+.ent-fone__nav i{flex:1;text-align:center;font:600 8.5px var(--lpm-font-body);font-style:normal;color:var(--lpm-tinta-suave)}
+.ent-fone__nav i.on{color:var(--lpm-vivo);font-weight:700}
 
 /* centro do leque: a aula como origem dos formatos */
 .lpm-f2--livro.ent-aula img{aspect-ratio:1;border-radius:18px;transform:none;width:min(190px,50vw)}
@@ -51,22 +70,10 @@ body{margin:0}
 .ent-tabela td b{color:var(--lpm-navy);font-weight:600}
 .ent-remate{margin-top:16px;font:600 15.5px var(--lpm-font-body);color:var(--lpm-navy);display:flex;gap:10px}
 .ent-remate:before{content:"→";color:var(--lpm-vivo);font-weight:700}
-.ent-grade{margin-top:16px;display:grid;grid-template-columns:42px repeat(4,1fr);gap:5px}
-.ent-grade b{font:600 10px var(--lpm-font-body);color:var(--lpm-tinta-suave);display:grid;place-items:center}
-.ent-grade span{border-radius:7px;padding:9px 4px;text-align:center;font:600 10.5px var(--lpm-font-body);line-height:1.2}
-.ent-grade .liv{background:var(--lpm-gelo);color:var(--lpm-tinta-suave);font-weight:400}
-.ent-grade .d1{background:color-mix(in srgb,var(--lpm-reforco) 16%,#fff);color:var(--lpm-reforco-escuro)}
-.ent-grade .d2{background:color-mix(in srgb,var(--lpm-vivo) 14%,#fff);color:var(--lpm-vivo)}
-.ent-grade .d3{background:color-mix(in srgb,var(--lpm-destaque) 20%,#fff);color:#1c7f93}
-.ent-funil{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:16px}
-.ent-funil>div{background:var(--lpm-gelo);border-radius:12px;padding:11px}
-.ent-funil h5{margin:0 0 9px;font:700 10px var(--lpm-font-display);letter-spacing:.07em;text-transform:uppercase;color:var(--lpm-tinta-suave)}
-.ent-funil p{background:#fff;border-radius:9px;padding:9px 10px;margin:0 0 6px;font:600 12px var(--lpm-font-body);color:var(--lpm-navy);box-shadow:0 2px 5px -2px color-mix(in srgb,var(--lpm-navy) 22%,transparent)}
-.ent-funil p s{display:block;text-decoration:none;font-weight:400;font-size:10.5px;color:var(--lpm-tinta-suave);margin-top:2px}
 .ent-rodape{padding:38px 0;text-align:center;font-size:13.5px;color:var(--lpm-tinta-suave)}
 .ent-rodape b{color:var(--lpm-navy)}
 
-/* CTA com uma unica unidade: card centrado */
+/* CTA com uma única unidade: card centrado */
 .lpm-matricula__grid[data-quantidade="1"] .lpm-unidade{align-items:center;text-align:center}
 .lpm-matricula__grid[data-quantidade="1"] .lpm-unidade .lpm-btn{width:100%;justify-content:center}
 </style>
@@ -130,7 +137,23 @@ body{margin:0}
 
    <div class="lpm-arte__palco" aria-hidden="true"></div>
 
-   <img class="lpm-arte__livro ent-centro" src="img/ilustra/aluna-atividade.webp" alt="Aluna fazendo atividade na plataforma" loading="lazy">
+   <div class="lpm-arte__livro ent-fone" role="img" aria-label="O espaço do aluno na plataforma, com o plano de estudo montado pela Lara">
+    <div class="ent-fone__topo"></div>
+    <div class="ent-fone__cab">
+     <span class="ent-fone__av">LS</span>
+     <span><b>Meu plano de estudo</b><s>Prova de Ciências · sexta</s></span>
+    </div>
+    <div class="ent-fone__corpo">
+     <div class="ent-fone__lara"><span class="ent-fone__bolha">Separei o que estudar, na ordem. Vamos?</span></div>
+     <div class="ent-fone__item feito"><i>✓</i>Rever o resumo do capítulo</div>
+     <div class="ent-fone__item"><i>2</i>12 exercícios de fixação</div>
+     <div class="ent-fone__item"><i>3</i>Simulado curto · 20 min</div>
+     <div class="ent-fone__item"><i>4</i>Revisar o que errei</div>
+     <div class="ent-fone__barra"><s></s></div>
+     <div class="ent-fone__nota">1 de 4 concluído · a escola e sua família acompanham</div>
+     <div class="ent-fone__nav"><i class="on">Estudar</i><i>Agenda</i><i>Notas</i></div>
+    </div>
+   </div>
 
    <div class="lpm-arte__card lpm-arte__card--insights">
     <div class="lpm-arte__titulo lpm-arte__titulo--insights">Insights</div>
@@ -143,6 +166,7 @@ body{margin:0}
     </div>
 
    <div class="lpm-arte__card lpm-arte__card--aula">
+    <img src="img/ilustra/professora-aula.webp" alt="" loading="lazy">
     <div class="lpm-arte__titulo">Aula</div>
     <div class="lpm-arte__sub">o conteúdo vira aula interativa</div>
     </div>
@@ -181,13 +205,15 @@ body{margin:0}
     </div>
 
    <div class="lpm-arte__card lpm-arte__card--exercicios">
-    <div class="lpm-arte__titulo">Exercícios</div>
-    <div class="lpm-arte__sub">fixação e avaliação</div>
-    </div>
+    <img src="img/ilustra/exercicios.webp" alt="" loading="lazy">
+    <div><div class="lpm-arte__titulo">Exercícios</div>
+    <div class="lpm-arte__sub">fixação e avaliação</div></div>
+   </div>
 
    <div class="lpm-arte__card lpm-arte__card--atividade">
-    <div class="lpm-arte__titulo">Atividade</div>
-    <div class="lpm-arte__sub">prática no ritmo da turma</div>
+    <img src="img/ilustra/aluna-atividade.webp" alt="" loading="lazy">
+    <div><div class="lpm-arte__titulo">Atividade</div>
+    <div class="lpm-arte__sub">prática no ritmo da turma</div></div>
    </div>
   </div>
  </div>
@@ -333,44 +359,6 @@ body{margin:0}
     <tr><td><b>Qua · 20h15</b></td><td>12 exercícios de Matemática</td></tr>
     <tr><td><b>Qui · 18h05</b></td><td>Revisão com o tutor</td></tr>
     </table>
-   </div>
-  </div>
- </div>
-</section>
-
-<!-- ═══ SECRETARIA ═══ -->
-<section class="lpm-secao">
- <div class="lpm-wrap">
-  <div class="lpm-reveal">
-   <span class="lpm-kicker">Nos bastidores</span>
-   <h2>A organização que você sente sem ver.</h2>
-   <p class="lpm-secao__lead">O mesmo sistema cuida da matrícula, do horário e da enturmação. É por isso que o ano começa pronto no primeiro dia e a secretaria te responde na hora.</p>
-  </div>
-  <div class="ent-duo lpm-reveal" style="--d:0.1s">
-   <div>
-    <div class="ent-card">
-    <div class="ent-card__t">Matrícula e rematrícula</div>
-    <div class="ent-card__s">Da primeira visita ao contrato assinado</div>
-    <div class="ent-funil">
-     <div><h5>Contato feito</h5><p>Família Barbosa<s>Infantil</s></p><p>Família Dias<s>7º ano</s></p></div>
-     <div><h5>Visita agendada</h5><p>Família Araújo<s>1º ano · 27/08</s></p></div>
-     <div><h5>Matriculado</h5><p>Família Monteiro<s>Infantil ✓</s></p></div>
-    </div>
-    </div>
-    <div class="ent-remate">Sua matrícula não fica entre uma planilha e outra</div>
-   </div>
-   <div>
-    <div class="ent-card">
-    <div class="ent-card__t">Grade horária</div>
-    <div class="ent-card__s">6º ano A · montada pela IA em minutos</div>
-    <div class="ent-grade">
-     <b></b><b>Seg</b><b>Ter</b><b>Qua</b><b>Qui</b>
-     <b>13:00</b><span class="d1">Port.</span><span class="liv">Livre</span><span class="d2">Mat.</span><span class="liv">Livre</span>
-     <b>13:50</b><span class="liv">Livre</span><span class="d3">Ciên.</span><span class="d1">Port.</span><span class="d3">Ciên.</span>
-     <b>14:40</b><span class="d2">Mat.</span><span class="liv">Livre</span><span class="liv">Livre</span><span class="d2">Mat.</span>
-    </div>
-    </div>
-    <div class="ent-remate">O ano letivo começa organizado no primeiro dia</div>
    </div>
   </div>
  </div>
