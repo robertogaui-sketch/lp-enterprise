@@ -24,8 +24,20 @@ body{margin:0}
 
 /* visual do hero: tela de produto flutuando */
 .ent-hero-tela{position:relative;flex-direction:column;width:100%;margin:0}
-.ent-hero-tela img{width:100%;border-radius:14px;box-shadow:0 30px 70px -30px color-mix(in srgb,var(--lpm-navy) 55%,transparent),0 10px 24px -14px color-mix(in srgb,var(--lpm-navy) 30%,transparent)}
-.ent-hero-tela figcaption{margin:14px 0 0;font:600 13px var(--lpm-font-body);color:var(--lpm-texto-claro-2);text-align:center}
+.ent-hero-tela figcaption{margin:18px 0 0;font:600 13.5px var(--lpm-font-body);color:var(--lpm-texto-claro-2);text-align:center}
+/* as duas telas de insights, empilhadas e levemente inclinadas */
+.ent-telas{display:flex;flex-direction:column;gap:16px;width:100%}
+.ent-telas img{width:100%;border-radius:14px;border:1px solid rgba(255,255,255,.14);background:#fff;box-shadow:0 30px 64px -26px rgba(3,12,28,.62),0 10px 24px -14px rgba(3,12,28,.45)}
+.ent-telas img:first-child{transform:rotate(-1.2deg)}
+.ent-telas img:last-child{transform:rotate(1deg)}
+/* hero: coluna da direita mais larga, pra os insights ficarem legíveis */
+@media(min-width:1024px){
+ .lpm-hero__in{grid-template-columns:minmax(0,1fr) minmax(0,568px);gap:44px}
+ .lpm-hero__conteudo{max-width:520px}
+}
+/* família: ilustração no lugar das telas */
+.ent-familia-ilustra{display:grid;place-items:center}
+.ent-familia-ilustra img{width:min(420px,100%);height:auto}
 
 /* centro da órbita: o espaço do aluno num celular, apoiado no pedestal */
 .lpm-arte__livro.ent-fone{width:min(252px,66vw);height:430px;display:flex;flex-direction:column;background:#fff;border:8px solid var(--lpm-navy);border-radius:30px;overflow:hidden;box-shadow:0 26px 50px -22px color-mix(in srgb,var(--lpm-navy) 55%,transparent);text-align:left}
@@ -100,8 +112,11 @@ body{margin:0}
    </div>
   </div>
   <figure class="lpm-hero__capas ent-hero-tela">
-   <img src="img/produto/relatorio-aluno.webp" alt="Relatório do aluno com desempenho, distribuição na turma e participação" loading="eager">
-   <figcaption>O que você acompanha, em tempo real</figcaption>
+   <div class="ent-telas">
+    <img src="img/produto/relatorio-aluno.webp" alt="Desempenho do aluno, distribuição na turma e participação" loading="eager">
+    <img src="img/produto/habilidades.webp" alt="Histórico de atividades e habilidades da BNCC do aluno" loading="eager">
+   </div>
+   <figcaption>Os insights do seu filho, em tempo real</figcaption>
   </figure>
  </div>
 </section>
@@ -294,8 +309,8 @@ body{margin:0}
     </div>
    </div>
   </div>
-  <div class="lpm-familia__telas lpm-reveal" style="--d:0.2s">
-   <img src="img/produto/habilidades.webp" alt="Histórico de atividades e habilidades da BNCC no relatório" loading="lazy">
+  <div class="ent-familia-ilustra lpm-reveal" style="--d:0.2s">
+   <img src="img/ilustra/familia-acompanha.webp" alt="Família acompanhando o desenvolvimento do aluno" loading="lazy">
   </div>
  </div>
 </section>
