@@ -24,9 +24,9 @@ body{margin:0}
 
 /* visual do hero: tela de produto flutuando */
 .ent-hero-tela{position:relative;flex-direction:column;width:100%;margin:0}
-.ent-hero-tela figcaption{margin:18px 0 0;font:600 13.5px var(--lpm-font-body);color:var(--lpm-texto-claro-2);text-align:center}
+.ent-hero-tela figcaption{margin:22px 0 0;font:600 13.5px var(--lpm-font-body);color:var(--lpm-texto-claro-2);text-align:center}
 /* as duas telas de insights, empilhadas e levemente inclinadas */
-.ent-telas{display:flex;flex-direction:column;gap:16px;width:100%}
+.ent-telas{display:flex;flex-direction:column;gap:18px;width:100%}
 .ent-telas img{width:100%;border-radius:14px;border:1px solid rgba(255,255,255,.14);background:#fff;box-shadow:0 30px 64px -26px rgba(3,12,28,.62),0 10px 24px -14px rgba(3,12,28,.45)}
 .ent-telas img:first-child{transform:rotate(-1.2deg)}
 .ent-telas img:last-child{transform:rotate(1deg)}
@@ -36,21 +36,21 @@ body{margin:0}
  .lpm-hero__conteudo{max-width:520px}
 }
 /* família: as telas de insight do responsável */
-.ent-telas-familia{display:flex;flex-direction:column;gap:18px}
+.ent-telas-familia{display:flex;flex-direction:column;gap:20px;margin-top:8px}
 .ent-telas-familia img{width:100%;border-radius:14px;border:1px solid var(--lpm-borda);background:#fff;box-shadow:0 24px 50px -24px color-mix(in srgb,var(--lpm-navy) 35%,transparent)}
 .ent-telas-familia img:first-child{transform:rotate(-.8deg)}
 .ent-telas-familia img:last-child{transform:rotate(.7deg)}
 /* tela em largura cheia */
-.ent-tela-larga{margin-top:38px}
+.ent-tela-larga{margin-top:52px}
 .ent-tela-larga img{width:100%;border-radius:16px;border:1px solid var(--lpm-borda);background:#fff;box-shadow:0 28px 60px -26px color-mix(in srgb,var(--lpm-navy) 38%,transparent)}
-.ent-legenda{margin:16px 0 0;text-align:center;font:500 14.5px var(--lpm-font-body);color:var(--lpm-tinta-suave)}
+.ent-legenda{margin:22px 0 0;text-align:center;font:500 14.5px var(--lpm-font-body);color:var(--lpm-tinta-suave)}
 /* gamificação */
-.ent-gami{display:grid;gap:22px;margin-top:36px}
+.ent-gami{display:grid;gap:26px;margin-top:52px}
 @media(min-width:1024px){.ent-gami{grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr);align-items:center;gap:36px}}
 .ent-gami img{width:100%;border-radius:14px;border:1px solid var(--lpm-borda);background:#fff;box-shadow:0 24px 50px -24px color-mix(in srgb,var(--lpm-navy) 32%,transparent)}
 .ent-gami ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:15px}
-.ent-gami li{display:flex;gap:11px;font:400 15.5px/1.55 var(--lpm-font-body);color:var(--lpm-tinta-suave)}
-.ent-gami li:before{content:"\2726";color:var(--lpm-vivo);font-weight:700;flex:none}
+.ent-gami li{position:relative;padding-left:26px;font:400 15.5px/1.6 var(--lpm-font-body);color:var(--lpm-tinta-suave)}
+.ent-gami li:before{content:"\2726";position:absolute;left:0;top:0;color:var(--lpm-vivo);font-weight:700}
 .ent-gami li b{color:var(--lpm-navy);font-weight:600}
 
 /* centro da órbita: o espaço do aluno num celular, apoiado no pedestal */
@@ -98,6 +98,9 @@ body{margin:0}
 .ent-remate:before{content:"→";color:var(--lpm-vivo);font-weight:700}
 .ent-rodape{padding:38px 0;text-align:center;font-size:13.5px;color:var(--lpm-tinta-suave)}
 .ent-rodape b{color:var(--lpm-navy)}
+/* selos: cada um no seu tamanho ótico */
+.lpm-teachy__provas .ent-selo-stanford{height:44px}
+.lpm-teachy__provas .lpm-selo-holoniq{height:66px;width:auto}
 
 /* CTA com uma única unidade: card centrado */
 .lpm-matricula__grid[data-quantidade="1"] .lpm-unidade{align-items:center;text-align:center}
@@ -120,7 +123,7 @@ body{margin:0}
   <div class="lpm-hero__conteudo">
    <span class="lpm-eyebrow">Matrículas 2027</span>
    <h1 class="lpm-hero__title">Aqui, a tecnologia trabalha para o seu filho.</h1>
-   <p class="lpm-hero__sub">A Escola Demo funciona sobre um único sistema com inteligência artificial. O mesmo que o professor usa para preparar a aula, que o seu filho usa para estudar, e que traz a nota e a presença até você.</p>
+   <p class="lpm-hero__sub">A Escola Demo trabalha com um único sistema de inteligência artificial. O mesmo que o professor usa para preparar a aula, que o seu filho usa para estudar, e que traz a nota e a presença até você.</p>
    <div class="lpm-hero__ctas">
     <a class="lpm-btn lpm-btn--solido" href="#matricula">Falar com a escola</a>
    </div>
@@ -190,7 +193,7 @@ body{margin:0}
     <div class="lpm-arte__linhas">
      <div class="lpm-arte__aluno"><span>Avançado</span><i style="width:72%;background:var(--lpm-destaque)"></i></div>
      <div class="lpm-arte__aluno"><span>No ritmo</span><i style="width:54%;background:var(--lpm-ritmo)"></i></div>
-     <div class="lpm-arte__aluno"><span>Precisa reforço</span><i style="width:28%;background:var(--lpm-reforco)"></i></div>
+     <div class="lpm-arte__aluno"><span>Precisa reforçar</span><i style="width:28%;background:var(--lpm-reforco)"></i></div>
     </div>
     </div>
 
@@ -336,7 +339,7 @@ body{margin:0}
   <div class="lpm-reveal">
    <span class="lpm-kicker">Vontade de estudar</span>
    <h2>Estudar vira algo que ele quer fazer.</h2>
-   <p class="lpm-secao__lead">A plataforma tem nível, pontos e sequência de dias praticados. O seu filho sobe de faixa, mantém a sequência e vê onde está em relação à turma — sem ninguém precisar ficar cobrando.</p>
+   <p class="lpm-secao__lead">A plataforma tem nível, pontos e sequência de dias praticados. O seu filho sobe de nível, mantém a sequência e vê onde está em relação à turma — sem ninguém precisar ficar cobrando.</p>
   </div>
   <div class="ent-gami lpm-reveal" style="--d:0.1s">
    <img src="img/tela/gamificacao.png" alt="Nível do aluno, pontos de experiência e ranking de prática da turma" loading="lazy">
@@ -411,8 +414,19 @@ body{margin:0}
    <div class="lpm-stat"><strong>96%</strong><span>de aprovação entre educadores</span></div>
   </div>
   <div class="lpm-teachy__provas lpm-reveal" style="--d:0.2s">
-   <img src="img/selos/stanford.webp" alt="Stanford University" height="42" loading="lazy">
-   <img src="img/selos/holoniq.webp" alt="LATAM EdTech 100 · HolonIQ" height="52" loading="lazy">
+   <img class="ent-selo-stanford" src="img/selos/stanford.webp" alt="Stanford University" loading="lazy">
+   <svg class="lpm-selo-holoniq" viewBox="0 0 112 128" role="img" aria-label="LATAM EdTech 100 · HolonIQ">
+    <rect x="4" y="4" width="104" height="120" fill="none" stroke="currentColor" stroke-width="5"/>
+    <text x="56" y="30" text-anchor="middle" fill="currentColor" font-family="Quicksand, sans-serif" font-weight="700" font-size="15" letter-spacing="1">LATAM</text>
+    <text x="56" y="47" text-anchor="middle" fill="currentColor" font-family="Quicksand, sans-serif" font-weight="700" font-size="15" letter-spacing="1">EDTECH</text>
+    <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+     <path d="M22 62h14v10a7 7 0 0 1-14 0z"/>
+     <path d="M22 64h-4a5 5 0 0 0 5 7m13-7h4a5 5 0 0 1-5 7"/>
+     <path d="M29 79v5m-5 0h10"/>
+    </g>
+    <text x="72" y="85" text-anchor="middle" fill="currentColor" font-family="Quicksand, sans-serif" font-weight="700" font-size="34">100</text>
+    <text x="56" y="112" text-anchor="middle" fill="currentColor" font-family="Quicksand, sans-serif" font-weight="700" font-size="17">Holon IQ</text>
+   </svg>
    <span>Criada por brasileiros em Stanford</span>
    <span>Premiada internacionalmente</span>
    <span>100% alinhada à BNCC</span>
