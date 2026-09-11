@@ -35,12 +35,12 @@
 body{margin:0}
 
 /* barra de topo */
-.ent-topo{position:sticky;top:0;z-index:70;background:rgba(255,255,255,.9);backdrop-filter:blur(18px);border-bottom:1px solid var(--lpm-borda-suave)}
+.ent-topo{position:sticky;top:0;z-index:70;background:#082b5b;border-bottom:1px solid rgba(255,255,255,.12)}
 .ent-topo__in{display:flex;align-items:center;gap:12px;padding:13px 0}
-.ent-topo__marca{width:44px;height:44px;border-radius:10px;background:#fff;display:grid;place-items:center;overflow:hidden}
-.ent-topo__marca img{width:100%;height:100%;object-fit:contain}
-.ent-topo__nome{font:700 17px var(--lpm-font-display);color:var(--lpm-navy)}
-.ent-topo .lpm-btn{margin-left:auto;height:40px;padding:0 18px;font-size:14px}
+.ent-topo__marca{height:46px;display:grid;place-items:center}
+.ent-topo__marca img{height:46px;width:auto;display:block}
+.ent-topo__nome{display:none}
+.ent-topo .lpm-btn{margin-left:auto;height:42px;padding:0 22px;font-size:14.5px;background:#d7a360;color:#082b5b;border-radius:999px;font-weight:700}
 
 /* visual do hero: tela de produto flutuando */
 .ent-hero-tela{position:relative;flex-direction:column;width:100%;margin:0}
@@ -131,7 +131,7 @@ body{margin:0}
 <div class="lpm lpm--preview">
 
 <div class="ent-topo"><div class="lpm-wrap ent-topo__in">
- <div class="ent-topo__marca"><img src="img/escola-logo.png" alt="Da Vinci Academy"></div>
+ <div class="ent-topo__marca"><img src="img/escola-logo.webp" alt="Da Vinci International Academy"></div>
  <span class="ent-topo__nome">Da Vinci Academy</span>
  <a class="lpm-btn lpm-btn--solido" href="#matricula">Falar com a escola</a>
 </div></div>
