@@ -495,22 +495,29 @@ body{margin:0}
 
 </div>
 <script>
-(function(){
- var alvos = document.querySelectorAll('.lpm-reveal');
- // failsafe: nada de conteudo invisivel se o observer nao disparar
- setTimeout(function(){
-  for(var j=0;j<alvos.length;j++) alvos[j].classList.add('is-in');
- },1200);
- if(!('IntersectionObserver' in window)){
-  for(var i=0;i<alvos.length;i++) alvos[i].classList.add('is-in');
-  return;
- }
- var io = new IntersectionObserver(function(entradas){
-  entradas.forEach(function(e){
-   if(e.isIntersecting){ e.target.classList.add('is-in'); io.unobserve(e.target); }
-  });
- },{rootMargin:'0px 0px -12% 0px',threshold:0.06});
- alvos.forEach(function(el){ io.observe(el); });
+(() => {
+	const alvos = document.querySelectorAll(".lpm-reveal");
+	const mostraTudo = () => {
+		for (const el of alvos) el.classList.add("is-in");
+	};
+	// failsafe: nada de conteudo invisivel se o observer nao disparar
+	setTimeout(mostraTudo, 1200);
+	if (!("IntersectionObserver" in window)) {
+		mostraTudo();
+		return;
+	}
+	const io = new IntersectionObserver(
+		(entradas) => {
+			for (const e of entradas) {
+				if (e.isIntersecting) {
+					e.target.classList.add("is-in");
+					io.unobserve(e.target);
+				}
+			}
+		},
+		{ rootMargin: "0px 0px -12% 0px", threshold: 0.06 },
+	);
+	for (const el of alvos) io.observe(el);
 })();
 </script>
 </body>
