@@ -1,0 +1,569 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Missão Paz · Um tutor para cada aluno</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="lp-material.css">
+<style>
+/* ═══════════════════════════════════════════════════════════════
+   Brand kit do Instituto Educacional Missão Paz, tirado do logo oficial: a pomba com o
+   ramo em azul-ciano e o nome em azul-marinho. O marinho vira a cor estrutural
+   e o ciano o acento; as cores dos estados do aluno são neutras.
+   Sobrescreve o template; o resto do lp-material.css fica intacto.
+   ═══════════════════════════════════════════════════════════════ */
+.lpm{
+ --lpm-principal:#0072BC;
+ --lpm-vivo:#007fae;
+ --lpm-navy:#003F7F;
+ --lpm-navy2:#1f568e;
+ --lpm-gelo:#edf5fa;
+ --lpm-gelo2:#deedf6;
+ --lpm-destaque:#008577;
+ --lpm-destaque-claro:#add8d3;
+ --lpm-reforco:#E5533D;
+ --lpm-reforco-escuro:#bc4432;
+ --lpm-ritmo:#c6861c;
+ --lpm-ritmo-escuro:#956515;
+ --lpm-alem:#6A5ACD;
+ --lpm-alem-escuro:#574aa8;
+ --lpm-tinta:#003F7F;
+ --lpm-tinta-suave:#547ea9;
+ --lpm-font-display:"Poppins",sans-serif;
+ --lpm-font-body:"Poppins",sans-serif;
+}
+/* ═══════════════════════════════════════════════════════════════
+   Camada Enterprise — só o que não existe no template de material.
+   Tudo o mais vem de lp-material.css, sem alteração.
+   ═══════════════════════════════════════════════════════════════ */
+body{margin:0}
+
+/* barra de topo */
+.ent-topo{position:sticky;top:0;z-index:70;background:#fff}
+.ent-topo:after{content:"";display:block;height:4px;background:linear-gradient(90deg,#003F7F,#0072BC,#00AEEF)}
+.ent-topo__in{display:flex;align-items:center;gap:12px;padding:11px 0}
+.ent-topo__marca{height:52px;display:grid;place-items:center}
+.ent-topo__marca img{height:52px;width:auto;display:block}
+.ent-topo__nome{font:800 17px/1.15 var(--lpm-font-display);color:var(--lpm-navy);letter-spacing:-.01em}
+.ent-topo__nome s{display:block;text-decoration:none;font:600 11px/1.3 var(--lpm-font-body);letter-spacing:.09em;text-transform:uppercase;color:var(--lpm-tinta-suave)}
+.ent-topo .lpm-btn{margin-left:auto;height:42px;padding:0 22px;font-size:14.5px;background:var(--lpm-principal);color:#fff;border-radius:999px;font-weight:700}
+@media (max-width:560px){
+ .ent-topo__marca,.ent-topo__marca img{height:42px}
+ .ent-topo__nome{font-size:15px}
+ .ent-topo__nome s{display:none}
+ .ent-topo .lpm-btn{height:38px;padding:0 15px;font-size:13.5px;white-space:nowrap}
+}
+
+/* visual do hero: tela de produto flutuando */
+.ent-hero-tela{position:relative;flex-direction:column;width:100%;margin:0}
+.lpm .ent-hero-tela figcaption{margin:22px 0 0;font:600 13.5px var(--lpm-font-body);color:var(--lpm-texto-claro-2);text-align:center}
+/* as duas telas de insights, empilhadas e levemente inclinadas */
+.ent-telas{display:flex;flex-direction:column;gap:18px;width:100%}
+.ent-telas img{width:100%;border-radius:14px;border:1px solid rgba(255,255,255,.14);background:#fff;box-shadow:0 30px 64px -26px rgba(3,12,28,.62),0 10px 24px -14px rgba(3,12,28,.45)}
+.ent-telas img:first-child{transform:rotate(-1.2deg)}
+.ent-telas img:last-child{transform:rotate(1deg)}
+/* hero: coluna da direita mais larga, pra os insights ficarem legíveis */
+@media(min-width:1024px){
+ .lpm-hero__in{grid-template-columns:minmax(0,1fr) minmax(0,568px);gap:44px}
+ .lpm-hero__conteudo{max-width:520px}
+}
+/* família: as telas de insight do responsável */
+.ent-telas-familia{display:flex;flex-direction:column;gap:20px;margin-top:8px}
+.ent-telas-familia img{width:100%;border-radius:14px;border:1px solid var(--lpm-borda);background:#fff;box-shadow:0 24px 50px -24px color-mix(in srgb,var(--lpm-navy) 35%,transparent)}
+.ent-telas-familia img:first-child{transform:rotate(-.8deg)}
+.ent-telas-familia img:last-child{transform:rotate(.7deg)}
+/* tela em largura cheia */
+.ent-tela-larga{margin-top:52px}
+.ent-tela-larga img{width:100%;border-radius:16px;border:1px solid var(--lpm-borda);background:#fff;box-shadow:0 28px 60px -26px color-mix(in srgb,var(--lpm-navy) 38%,transparent)}
+.lpm .ent-legenda{margin:34px 0 0;text-align:center;font:500 14.5px var(--lpm-font-body);color:var(--lpm-tinta-suave)}
+/* gamificação */
+.ent-gami{display:grid;gap:26px;margin-top:52px}
+@media(min-width:1024px){.ent-gami{grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr);align-items:center;gap:36px}}
+.ent-gami img{width:100%;border-radius:14px;border:1px solid var(--lpm-borda);background:#fff;box-shadow:0 24px 50px -24px color-mix(in srgb,var(--lpm-navy) 32%,transparent)}
+.ent-gami ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:15px}
+.ent-gami li{position:relative;padding-left:26px;font:400 15.5px/1.6 var(--lpm-font-body);color:var(--lpm-tinta-suave)}
+.ent-gami li:before{content:"\2726";position:absolute;left:0;top:0;color:var(--lpm-vivo);font-weight:700}
+.ent-gami li b{color:var(--lpm-navy);font-weight:600}
+
+/* centro da órbita: o espaço do aluno num celular, apoiado no pedestal */
+.lpm-arte__livro.ent-fone{width:min(252px,66vw);height:430px;display:flex;flex-direction:column;background:#fff;border:8px solid var(--lpm-navy);border-radius:30px;overflow:hidden;box-shadow:0 26px 50px -22px color-mix(in srgb,var(--lpm-navy) 55%,transparent);text-align:left}
+.ent-fone__topo{height:18px;background:var(--lpm-navy)}
+.ent-fone__cab{display:flex;align-items:center;gap:9px;padding:11px 13px 10px;border-bottom:1px solid var(--lpm-borda-suave)}
+.ent-fone__av{width:28px;height:28px;border-radius:50%;background:var(--lpm-vivo);color:#fff;display:grid;place-items:center;font:700 11px var(--lpm-font-display);flex:none}
+.ent-fone__cab b{display:block;font:700 12.5px var(--lpm-font-display);color:var(--lpm-navy);line-height:1.25}
+.ent-fone__cab s{display:block;text-decoration:none;font-size:10px;color:var(--lpm-tinta-suave)}
+.ent-fone__corpo{padding:12px 13px 0;flex:1;display:flex;flex-direction:column}
+.ent-fone__lara{display:flex;gap:7px;align-items:flex-start;margin-bottom:11px}
+.ent-fone__lara:before{content:"";width:22px;height:22px;border-radius:50%;background:linear-gradient(135deg,var(--lpm-vivo),var(--lpm-destaque));flex:none}
+.ent-fone__bolha{font-size:10.5px;line-height:1.45;background:var(--lpm-gelo);border-radius:10px;padding:7px 9px;color:var(--lpm-tinta-suave)}
+.ent-fone__item{display:flex;align-items:center;gap:8px;font-size:10.5px;color:var(--lpm-tinta-suave);border:1px solid var(--lpm-borda-suave);border-radius:9px;padding:8px 9px;margin-bottom:6px}
+.ent-fone__item i{width:16px;height:16px;border-radius:5px;background:var(--lpm-vivo);color:#fff;display:grid;place-items:center;font:700 8.5px var(--lpm-font-display);font-style:normal;flex:none}
+.ent-fone__item.feito{color:var(--lpm-tinta-suave);opacity:.72}
+.ent-fone__item.feito i{background:var(--lpm-destaque)}
+.ent-fone__barra{height:6px;border-radius:99px;background:var(--lpm-gelo);margin-top:11px;overflow:hidden}
+.ent-fone__barra s{display:block;width:25%;height:100%;border-radius:99px;background:var(--lpm-vivo)}
+.ent-fone__nota{font-size:9.5px;color:var(--lpm-tinta-suave);margin-top:6px}
+.ent-fone__nav{margin-top:auto;display:flex;border-top:1px solid var(--lpm-borda-suave);padding:9px 0 11px}
+.ent-fone__nav i{flex:1;text-align:center;font:600 8.5px var(--lpm-font-body);font-style:normal;color:var(--lpm-tinta-suave)}
+.ent-fone__nav i.on{color:var(--lpm-vivo);font-weight:700}
+
+/* centro do leque: a aula como origem dos formatos */
+.lpm-f2--livro.ent-aula img{aspect-ratio:1;border-radius:18px;transform:none;width:min(190px,50vw)}
+
+/* seções próprias do Enterprise */
+.ent-duo{display:grid;gap:20px;margin-top:34px}
+@media(min-width:900px){.ent-duo{grid-template-columns:1fr 1fr;gap:26px}}
+.ent-card{background:#fff;border:1px solid var(--lpm-borda);border-radius:18px;padding:22px 24px;box-shadow:0 16px 40px -26px color-mix(in srgb,var(--lpm-navy) 30%,transparent)}
+.ent-card__t{font:700 17px var(--lpm-font-display);color:var(--lpm-navy)}
+.lpm .ent-card__s{font-size:13px;color:var(--lpm-tinta-suave);margin-top:3px}
+.ent-passos{margin-top:16px;display:flex;flex-direction:column;gap:8px}
+.ent-passo{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--lpm-tinta-suave);background:var(--lpm-gelo);border-radius:10px;padding:11px 13px}
+.ent-passo b{width:20px;height:20px;border-radius:6px;background:var(--lpm-vivo);color:#fff;display:grid;place-items:center;font:700 11px var(--lpm-font-display);flex:none}
+.ent-passo.ok b{background:var(--lpm-destaque)}
+.ent-alerta{margin-top:16px;display:flex;gap:11px;align-items:flex-start;background:color-mix(in srgb,var(--lpm-ritmo) 12%,#fff);border:1px solid color-mix(in srgb,var(--lpm-ritmo) 32%,#fff);border-radius:12px;padding:13px 15px}
+.ent-alerta span{font-size:13px;line-height:1.55;color:var(--lpm-ritmo-escuro);font-weight:500}
+.ent-tabela{width:100%;border-collapse:collapse;margin-top:14px;font-size:13.5px}
+.ent-tabela th{text-align:left;font:600 10.5px var(--lpm-font-body);letter-spacing:.08em;text-transform:uppercase;color:var(--lpm-tinta-suave);padding:0 10px 9px 0;border-bottom:1px solid var(--lpm-borda)}
+.ent-tabela td{padding:10px 10px 10px 0;border-bottom:1px solid var(--lpm-borda-suave);color:var(--lpm-tinta-suave)}
+.ent-tabela td b{color:var(--lpm-navy);font-weight:600}
+.ent-remate{margin-top:16px;font:600 15.5px var(--lpm-font-body);color:var(--lpm-navy);display:flex;gap:10px}
+.ent-remate:before{content:"→";color:var(--lpm-vivo);font-weight:700}
+.ent-rodape{padding:38px 0;text-align:center;font-size:13.5px;color:var(--lpm-tinta-suave)}
+.ent-rodape b{color:var(--lpm-navy)}
+/* selos: cada um no seu tamanho ótico */
+.lpm-teachy__provas .ent-selo-stanford{height:44px}
+.lpm-teachy__provas .lpm-selo-holoniq{height:66px;width:auto}
+
+/* CTA com uma única unidade: card centrado */
+.lpm-matricula__grid[data-quantidade="1"] .lpm-unidade{align-items:center;text-align:center}
+.lpm-matricula__grid[data-quantidade="1"] .lpm-unidade .lpm-btn{width:100%;justify-content:center}
+
+.ent-topo__nome{display:none}
+/* telas da família maiores: são prints largos e o texto precisa ser lido */
+@media(min-width:1024px){.lpm-familia2{grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:48px}}
+</style>
+</head>
+<body>
+<div class="lpm lpm--preview">
+
+<div class="ent-topo"><div class="lpm-wrap ent-topo__in">
+ <div class="ent-topo__marca"><img src="img/escola-logo.webp" alt="Instituto Educacional Missão Paz"></div>
+ <span class="ent-topo__nome">Missão Paz<s>Belo Horizonte · Minas Gerais</s></span>
+ <a class="lpm-btn lpm-btn--solido" href="#matricula">Falar com a escola</a>
+</div></div>
+
+<!-- ═══ HERO ═══ -->
+<section class="lpm-hero">
+ <div class="lpm-hero__brilho" aria-hidden="true"></div>
+ <div class="lpm-wrap lpm-hero__in">
+  <div class="lpm-hero__conteudo">
+   <span class="lpm-eyebrow">Matrículas 2027</span>
+   <h1 class="lpm-hero__title">Um tutor particular para o seu filho, dentro da escola.</h1>
+   <p class="lpm-hero__sub">No Missão Paz, cada aluno estuda com a Lara, a inteligência artificial da escola. Ela explica no ritmo dele, organiza o que estudar para a prova, e você acompanha tudo de casa.</p>
+   <div class="lpm-hero__ctas">
+    <a class="lpm-btn lpm-btn--solido" href="#matricula">Falar com a escola</a>
+   </div>
+  </div>
+  <figure class="lpm-hero__capas ent-hero-tela">
+   <div class="ent-telas">
+    <img src="img/tela/aula-lara.webp" alt="Aula com a Lara, com os botões Simplificar, Mais detalhes e Tirar dúvida" loading="eager">
+   </div>
+   <figcaption>A aula com a Lara, como o seu filho vê</figcaption>
+  </figure>
+ </div>
+</section>
+
+<div class="lpm-logos"><div class="lpm-wrap lpm-logos__in">
+ <span class="lpm-logos__pill"><span>Maternal</span></span>
+ <span class="lpm-logos__pill"><span>Educação Infantil</span></span>
+ <span class="lpm-logos__pill"><span>Anos Iniciais</span></span>
+ <span class="lpm-logos__pill"><span>Anos Finais</span></span>
+ <span class="lpm-logos__pill"><span>Ensino Médio</span></span>
+</div></div>
+
+<!-- ═══ ÓRBITA · o ciclo da aula ═══ -->
+<section class="lpm-secao lpm-secao--justa lpm-secao--arte">
+ <div class="lpm-wrap">
+  <div class="lpm-reveal">
+   <span class="lpm-kicker">O tutor</span>
+   <h2>Ele estuda com quem explica do jeito que ele entende.</h2>
+   <p class="lpm-secao__lead">O seu filho conta o que quer estudar e a Lara monta uma aula curta, em etapas. Se ele não entendeu, ela explica de um jeito mais simples. Se quer saber mais, ela aprofunda. Se travou, ele tira a dúvida na hora.</p>
+  </div>
+
+  <div class="lpm-arte lpm-reveal">
+   <svg class="lpm-arte__fios" viewBox="0 0 700 700" aria-hidden="true">
+    <path d="M 250 150 C 268 160 275 170 282 182" style="stroke:var(--lpm-reforco)"/>
+    <path d="M 440 130 C 420 150 410 165 398 185" style="stroke:var(--lpm-destaque)"/>
+    <path d="M 248 262 C 258 262 266 262 278 262" style="stroke:var(--lpm-vivo)"/>
+    <path d="M 442 300 C 430 300 420 300 408 300" style="stroke:var(--lpm-alem)"/>
+    <path d="M 250 420 C 262 400 270 390 280 372" style="stroke:var(--lpm-reforco)"/>
+    <path d="M 432 462 C 420 430 412 412 400 380" style="stroke:var(--lpm-destaque)"/>
+    <path d="M 300 560 C 310 520 315 500 320 400" style="stroke:var(--lpm-ritmo)"/>
+   </svg>
+   <div class="lpm-arte__dots lpm-arte__dots--tl" aria-hidden="true"></div>
+   <div class="lpm-arte__dots lpm-arte__dots--br" aria-hidden="true"></div>
+
+   <div class="lpm-arte__palco" aria-hidden="true"></div>
+
+   <div class="lpm-arte__livro ent-fone" role="img" aria-label="O espaço do aluno na plataforma, com o plano de estudo montado pela Lara">
+    <div class="ent-fone__topo"></div>
+    <div class="ent-fone__cab">
+     <span class="ent-fone__av">LS</span>
+     <span><b>Meu plano de estudo</b><s>Prova de Ciências · sexta</s></span>
+    </div>
+    <div class="ent-fone__corpo">
+     <div class="ent-fone__lara"><span class="ent-fone__bolha">Separei o que estudar, na ordem. Vamos?</span></div>
+     <div class="ent-fone__item feito"><i>✓</i>Rever o resumo do capítulo</div>
+     <div class="ent-fone__item"><i>2</i>Mapa mental do conteúdo</div>
+     <div class="ent-fone__item"><i>3</i>Questões para praticar</div>
+     <div class="ent-fone__item"><i>4</i>Revisar o que errei</div>
+     <div class="ent-fone__barra"><s></s></div>
+     <div class="ent-fone__nota">1 de 4 concluído</div>
+     <div class="ent-fone__nav"><i class="on">Estudar</i><i>Agenda</i><i>Notas</i></div>
+    </div>
+   </div>
+
+   <div class="lpm-arte__card lpm-arte__card--insights">
+    <div class="lpm-arte__titulo lpm-arte__titulo--insights">Ele sabe onde está</div>
+    <div class="lpm-arte__sub">o progresso por assunto, em cada disciplina</div>
+    <div class="lpm-arte__linhas">
+     <div class="lpm-arte__aluno"><span>Dominado</span><i style="width:72%;background:var(--lpm-destaque)"></i></div>
+     <div class="lpm-arte__aluno"><span>Em evolução</span><i style="width:54%;background:var(--lpm-ritmo)"></i></div>
+     <div class="lpm-arte__aluno"><span>Precisa de reforço</span><i style="width:28%;background:var(--lpm-reforco)"></i></div>
+    </div>
+    </div>
+
+   <div class="lpm-arte__card lpm-arte__card--aula">
+    <img src="img/ilustra/professora-aula.webp" alt="" loading="lazy">
+    <div class="lpm-arte__titulo">Aula</div>
+    <div class="lpm-arte__sub">teoria, exemplos e questões</div>
+    </div>
+
+   <div class="lpm-arte__card lpm-arte__card--ritmo">
+    <div class="lpm-arte__cabeca">
+     <img src="img/ilustra/aluno-ritmo.webp" alt="" loading="lazy">
+     <div class="lpm-arte__titulo lpm-arte__titulo--ritmo">Se ele está no ritmo</div>
+    </div>
+    <p class="lpm-arte__proposta"><strong>Recebe prática no nível certo</strong> para seguir firme.</p>
+    <div class="lpm-arte__stepper"><span>Aprendendo</span><span class="ativo">Praticando</span><span>Consolidando</span></div>
+    </div>
+
+   <div class="lpm-arte__card lpm-arte__card--reforco">
+    <div class="lpm-arte__cabeca">
+     <img src="img/ilustra/aluna-reforco.webp" alt="" loading="lazy">
+     <div class="lpm-arte__titulo lpm-arte__titulo--reforco">Se ele ficou para trás</div>
+    </div>
+    <p class="lpm-arte__proposta"><strong>A escola vê onde travou</strong> e manda apoio.</p>
+    <div class="lpm-arte__linhas">
+     <div class="lpm-arte__aluno"><span>Dificuldade identificada</span><i style="width:78%;background:var(--lpm-reforco)"></i></div>
+     <div class="lpm-arte__aluno"><span>Conteúdo de apoio enviado</span><i style="width:46%;background:var(--lpm-reforco)"></i></div>
+    </div>
+    </div>
+
+   <div class="lpm-arte__card lpm-arte__card--alem">
+    <div class="lpm-arte__cabeca">
+     <img src="img/ilustra/aluno-alem.webp" alt="" loading="lazy">
+     <div class="lpm-arte__titulo lpm-arte__titulo--alem">Se ele quer ir além</div>
+    </div>
+    <p class="lpm-arte__proposta"><strong>Ganha desafio extra</strong> e aprofundamento.</p>
+    <div class="lpm-arte__linhas">
+     <div class="lpm-arte__aluno"><span>Desafios extras</span><i style="width:84%;background:var(--lpm-alem)"></i></div>
+     <div class="lpm-arte__aluno"><span>Aprofundamento</span><i style="width:62%;background:var(--lpm-alem)"></i></div>
+    </div>
+    </div>
+
+   <div class="lpm-arte__card lpm-arte__card--exercicios">
+    <img src="img/ilustra/exercicios.webp" alt="" loading="lazy">
+    <div><div class="lpm-arte__titulo">Exercícios</div>
+    <div class="lpm-arte__sub">para fixar o que foi dado em aula</div></div>
+   </div>
+
+   <div class="lpm-arte__card lpm-arte__card--atividade">
+    <img src="img/ilustra/aluna-atividade.webp" alt="" loading="lazy">
+    <div><div class="lpm-arte__titulo">Atividade</div>
+    <div class="lpm-arte__sub">prática no ritmo de cada aluno</div></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- ═══ LEQUE · formatos de estudo ═══ -->
+<section class="lpm-secao lpm-secao--gelo lpm-secao--formatos">
+ <div class="lpm-wrap lpm-formatos-col">
+  <div class="lpm-reveal">
+   <span class="lpm-kicker">Do jeito dele</span>
+   <h2>Um mesmo conteúdo. Muitas maneiras de aprender.</h2>
+   <p class="lpm-secao__lead">Para os menores, caça-palavras, palavra cruzada e o jogo "Quem sou eu?". Para os maiores, mapa mental, flashcards e slides. E até uma música sobre o assunto que ele está estudando. O seu filho escolhe por onde começar.</p>
+  </div>
+
+  <div class="lpm-formatos2 lpm-reveal" style="--d:0.1s">
+   <svg class="lpm-formatos2__fios" viewBox="0 0 700 700" aria-hidden="true">
+    <path d="M 250 150 C 268 160 275 170 282 182" style="stroke:var(--lpm-reforco)"/>
+    <path d="M 440 130 C 420 150 410 165 398 185" style="stroke:var(--lpm-destaque)"/>
+    <path d="M 248 262 C 258 262 266 262 278 262" style="stroke:var(--lpm-vivo)"/>
+    <path d="M 442 300 C 430 300 420 300 408 300" style="stroke:var(--lpm-alem)"/>
+    <path d="M 250 420 C 262 400 270 390 280 372" style="stroke:var(--lpm-reforco)"/>
+    <path d="M 432 462 C 420 430 412 412 400 380" style="stroke:var(--lpm-destaque)"/>
+    <path d="M 300 560 C 310 520 315 500 320 400" style="stroke:var(--lpm-ritmo)"/>
+   </svg>
+
+   <div class="lpm-f2 lpm-f2--livro ent-aula">
+    <img src="img/ilustra/professora-aula.webp" alt="Professora em aula no Instituto Educacional Missão Paz" loading="lazy">
+   </div>
+
+   <div class="lpm-f2 lpm-f2--mapa">
+    <span class="lpm-f2__chip lpm-f2__chip--reforco">Mapa mental</span>
+    <img src="img/formatos/mapa-mental.webp" alt="Mapa mental de classificações do substantivo" loading="lazy">
+   </div>
+   <div class="lpm-f2 lpm-f2--quiz">
+    <img src="img/formatos/quiz-vivo.webp" alt="Quiz ao vivo com pergunta e alternativas coloridas" loading="lazy">
+   </div>
+   <div class="lpm-f2 lpm-f2--video">
+    <span class="lpm-f2__chip lpm-f2__chip--alem">Vídeo interativo</span>
+    <img src="img/formatos/video-interativo.webp" alt="Vídeo interativo com quiz durante a aula" loading="lazy">
+   </div>
+   <div class="lpm-f2 lpm-f2--slides">
+    <span class="lpm-f2__chip lpm-f2__chip--vivo">Slides</span>
+    <img src="img/formatos/slides.webp" alt="Slides sobre aquíferos e reservas subterrâneas" loading="lazy">
+   </div>
+   <div class="lpm-f2 lpm-f2--flash">
+    <span class="lpm-f2__chip lpm-f2__chip--reforco">Flashcards</span>
+    <img src="img/formatos/flashcards.webp" alt="Flashcards de pergunta e resposta" loading="lazy">
+   </div>
+   <div class="lpm-f2 lpm-f2--jogos">
+    <img src="img/formatos/jogos.webp" alt="Jogos de caça-palavras e palavra-cruzada" loading="lazy">
+   </div>
+   <div class="lpm-f2 lpm-f2--tutor">
+    <img src="img/formatos/tutor.webp" alt="Tutor de revisão em formato de chat com a Lara" loading="lazy">
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- ═══ PLANO DE ESTUDOS ═══ -->
+<section class="lpm-secao">
+ <div class="lpm-wrap">
+  <div class="lpm-reveal">
+   <span class="lpm-kicker">Plano de estudos</span>
+   <h2>A semana de estudos sai do material da escola.</h2>
+   <p class="lpm-secao__lead">Antes da prova, o seu filho diz o que precisa estudar e anexa a apostila ou fotos do caderno. A Lara monta o plano a partir desse material, distribui as aulas e as revisões nos dias que ele escolheu, e cada aula usa só a parte daquele dia.</p>
+  </div>
+  <div class="ent-gami lpm-reveal" style="--d:0.1s">
+   <img src="img/tela/plano-estudos.webp" alt="Formulário do plano de estudos, com o campo para anexar a apostila ou fotos do caderno" loading="lazy">
+   <ul>
+    <li><b>Prova da escola, vestibular ou estudo pessoal</b>: ele escolhe o objetivo</li>
+    <li><b>A apostila ou a foto do caderno</b> viram a base do plano</li>
+    <li><b>Os dias e o tempo que ele tem</b>, de 15 minutos a 4 horas por dia</li>
+    <li><b>Do jeito que ele gosta de estudar</b>: videoaula, mapa mental, flashcards ou palavra cruzada</li>
+    <li><b>O professor também manda planos</b> para a turma ou para um aluno</li>
+   </ul>
+  </div>
+ </div>
+</section>
+
+<!-- ═══ ENEM E VESTIBULARES ═══ -->
+<section class="lpm-secao lpm-secao--gelo">
+ <div class="lpm-wrap">
+  <div class="lpm-reveal">
+   <span class="lpm-kicker">ENEM e vestibulares</span>
+   <h2>Treino de ENEM desde cedo, no ritmo de cada um.</h2>
+   <p class="lpm-secao__lead">O aluno monta o próprio simulado com provas oficiais de anos anteriores ou com questões inéditas. Quando a escola aplica o simulado, ele faz um dia por vez, como no ENEM, e depois vê a resolução de cada questão.</p>
+  </div>
+  <div class="ent-gami lpm-reveal" style="--d:0.1s">
+   <img src="img/tela/simulado-enem.webp" alt="Montagem do simulado: ENEM, FUVEST, UNICAMP e ESPCEX, com provas oficiais de anos anteriores" loading="lazy">
+   <ul>
+    <li><b>Simulado completo</b> nos modelos do ENEM, da FUVEST, da UNICAMP e da ESPCEX</li>
+    <li><b>Questões de prática</b> por disciplina, até 50 por vez</li>
+    <li><b>Simulado da escola</b> dividido em dias, como na prova real</li>
+    <li><b>Guia de Redação</b>: como ler a proposta, que argumentos e repertório usar</li>
+   </ul>
+  </div>
+ </div>
+</section>
+
+<!-- ═══ FAMÍLIA ═══ -->
+<section class="lpm-secao">
+ <div class="lpm-wrap lpm-familia2">
+  <div>
+   <div class="lpm-reveal">
+    <span class="lpm-kicker">A família por perto</span>
+    <h2>Você acompanha de perto, sem precisar perguntar.</h2>
+   </div>
+   <div class="lpm-familia__lista lpm-reveal" style="--d:0.1s">
+    <div class="lpm-familia__item">
+    <span class="lpm-familia__num">01</span>
+    <div><strong>Notas e evolução</strong><p>O boletim de cada bimestre e, em cada disciplina, como a nota evoluiu e em quais assuntos ele mais acerta.</p></div>
+    </div>
+    <div class="lpm-familia__item">
+    <span class="lpm-familia__num">02</span>
+    <div><strong>Tarefas e presença</strong><p>O que ele já entregou, o que está pendente e o calendário de presenças, com faltas e atrasos.</p></div>
+    </div>
+    <div class="lpm-familia__item">
+    <span class="lpm-familia__num">03</span>
+    <div><strong>Comunicados da escola</strong><p>Os avisos e os eventos do Missão Paz, num lugar só.</p></div>
+    </div>
+   </div>
+  </div>
+  <div class="lpm-familia__telas lpm-reveal" style="--d:0.2s">
+   <img src="img/tela/familia-insights.webp" alt="Área da família: notas por bimestre, evolução e assuntos com mais acertos" loading="lazy">
+   <img src="img/tela/familia-presencas.webp" alt="Área da família: calendário de presenças com faltas e atrasos" loading="lazy">
+  </div>
+ </div>
+</section>
+
+<!-- ═══ GAMIFICAÇÃO ═══ -->
+<section class="lpm-secao lpm-secao--gelo">
+ <div class="lpm-wrap">
+  <div class="lpm-reveal">
+   <span class="lpm-kicker">Vontade de estudar</span>
+   <h2>Estudar vira algo que ele quer fazer.</h2>
+   <p class="lpm-secao__lead">Nível, pontos e sequência de dias de estudo, como num jogo. O seu filho sobe de nível, mantém a sequência e vê onde está entre os colegas que mais praticam, sem ninguém precisar ficar cobrando.</p>
+  </div>
+  <div class="ent-gami lpm-reveal" style="--d:0.1s">
+   <img src="img/tela/gamificacao.png" alt="Nível do aluno, pontos de experiência e ranking de prática da turma" loading="lazy">
+   <ul>
+    <li><b>Nível e pontos a cada atividade concluída</b></li>
+    <li><b>Sequência de dias de estudo</b>, com prêmio a cada 7 dias seguidos</li>
+    <li><b>Campeões de prática da turma</b>, para quem se motiva competindo</li>
+    <li><b>O próprio jogo puxa o hábito</b>, sem cobrança em casa</li>
+   </ul>
+  </div>
+ </div>
+</section>
+
+<!-- ═══ INCLUSÃO (escuro) ═══ -->
+<section class="lpm-secao lpm-pessoal">
+ <div class="lpm-wrap">
+  <div class="lpm-reveal">
+   <span class="lpm-kicker">Inclusão</span>
+   <h2>A adaptação acompanha o aluno, não a atividade.</h2>
+   <p class="lpm-secao__lead">O perfil de cada estudante fica salvo na plataforma, respeitando as especificidades do laudo. A partir daí toda prova e toda atividade já saem adaptadas, sem depender de alguém refazer o material caso a caso.</p>
+  </div>
+  <div class="ent-duo lpm-reveal" style="--d:0.1s">
+   <div class="ent-card">
+    <div class="ent-card__t">Perfil de aprendizagem</div>
+    <div class="ent-card__s">Adaptações ativas em todas as atividades</div>
+    <div class="ent-passos">
+    <div class="ent-passo ok"><b>✓</b>Tempo estendido em avaliações</div>
+    <div class="ent-passo ok"><b>✓</b>Enunciado em linguagem simplificada</div>
+    <div class="ent-passo ok"><b>✓</b>Fonte ampliada e maior espaçamento</div>
+    </div>
+   </div>
+   <div class="ent-card">
+    <div class="ent-card__t">O que isso muda na prática</div>
+    <div class="ent-card__s">Uma vez configurado, vale sempre</div>
+    <div class="ent-passos">
+    <div class="ent-passo"><b>1</b>Vale na próxima prova</div>
+    <div class="ent-passo"><b>2</b>Vale na folhinha de atividade</div>
+    <div class="ent-passo"><b>3</b>Vale no simulado</div>
+    </div>
+    <div class="ent-remate">O combinado uma vez vale todos os dias</div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- ═══ IA COM SEGURANÇA ═══ -->
+<section class="lpm-secao lpm-secao--gelo">
+ <div class="lpm-wrap">
+  <div class="lpm-reveal">
+   <span class="lpm-kicker">IA com regra clara</span>
+   <h2>Você vê tudo o que ele estuda com a IA.</h2>
+   <p class="lpm-secao__lead">A dúvida de toda família quando ouve que a escola usa IA é se o filho vai aprender ou vai colar. Aqui, cada uso fica registrado na área da família: qual ferramenta, sobre qual assunto e quando. Nas conversas com a Lara, você lê cada mensagem.</p>
+  </div>
+  <div class="ent-tela-larga lpm-reveal" style="--d:0.1s">
+   <img src="img/tela/familia-uso-ia.webp" alt="Área da família: cada uso da IA pelo aluno, com ferramenta, assunto e data" loading="lazy">
+   <p class="ent-legenda">Na área da família, cada uso da IA aparece com a ferramenta, o assunto e a data. Você abre e lê a conversa inteira.</p>
+  </div>
+ </div>
+</section>
+
+<!-- ═══ TEACHY ═══ -->
+<section class="lpm-teachy">
+ <div class="lpm-wrap">
+  <img class="lpm-teachy__logo" src="img/logos/logo-preto-v2.svg" alt="Teachy" loading="lazy">
+  <div class="lpm-reveal">
+   <h2>A tecnologia é o professor. O Sistema IA é Teachy.</h2>
+   <p class="lpm-secao__lead">Tecnologia personalizada para o Instituto Educacional Missão Paz, em Belo Horizonte, para uma educação humana, cidadã e voltada para o futuro.</p>
+  </div>
+  <div class="lpm-teachy__grid lpm-reveal" style="--d:0.1s">
+   <div class="lpm-stat"><strong>81%</strong><span>dos professores percebem melhora nas notas dos alunos com o uso de IA pedagógica</span></div>
+   <div class="lpm-stat"><strong>86%</strong><span>dos professores relatam alunos mais participativos com materiais feitos na Teachy</span></div>
+   <div class="lpm-stat"><strong>96%</strong><span>de aprovação entre educadores</span></div>
+  </div>
+  <div class="lpm-teachy__provas lpm-reveal" style="--d:0.2s">
+   <img class="ent-selo-stanford" src="img/selos/stanford.webp" alt="Stanford University" loading="lazy">
+   <svg class="lpm-selo-holoniq" viewBox="0 0 112 128" role="img" aria-label="LATAM EdTech 100 · HolonIQ">
+    <rect x="4" y="4" width="104" height="120" fill="none" stroke="currentColor" stroke-width="5"/>
+    <text x="56" y="30" text-anchor="middle" fill="currentColor" font-family="Quicksand, sans-serif" font-weight="700" font-size="15" letter-spacing="1">LATAM</text>
+    <text x="56" y="47" text-anchor="middle" fill="currentColor" font-family="Quicksand, sans-serif" font-weight="700" font-size="15" letter-spacing="1">EDTECH</text>
+    <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+     <path d="M22 62h14v10a7 7 0 0 1-14 0z"/>
+     <path d="M22 64h-4a5 5 0 0 0 5 7m13-7h4a5 5 0 0 1-5 7"/>
+     <path d="M29 79v5m-5 0h10"/>
+    </g>
+    <text x="72" y="85" text-anchor="middle" fill="currentColor" font-family="Quicksand, sans-serif" font-weight="700" font-size="34">100</text>
+    <text x="56" y="112" text-anchor="middle" fill="currentColor" font-family="Quicksand, sans-serif" font-weight="700" font-size="17">Holon IQ</text>
+   </svg>
+   <span>Criada por brasileiros em Stanford</span>
+   <span>Premiada internacionalmente</span>
+   <span>100% alinhada à BNCC</span>
+  </div>
+ </div>
+</section>
+
+<!-- ═══ MATRÍCULA ═══ -->
+<section class="lpm-matricula" id="matricula">
+ <div class="lpm-wrap">
+  <div class="lpm-reveal lpm-centro">
+   <span class="lpm-kicker">Matrículas abertas</span>
+   <h2>Venha conhecer o Missão Paz por dentro.</h2>
+   <p class="lpm-secao__lead">Fale com a nossa equipe de matrículas. A gente tira suas dúvidas e agenda uma visita para você ver tudo isso funcionando.</p>
+  </div>
+  <div class="lpm-matricula__grid lpm-reveal" data-quantidade="1" style="--d:0.1s">
+   <div class="lpm-unidade">
+    <strong>Instituto Educacional Missão Paz</strong>
+    <span>Maternal ao Ensino Médio · Belo Horizonte/MG</span>
+    <a class="lpm-btn lpm-btn--zap" href="https://wa.me/5531996442122" target="_blank" rel="noopener">Falar no WhatsApp</a>
+    <a class="lpm-btn lpm-btn--insta" href="https://instagram.com/institutomissaopazoficial" target="_blank" rel="noopener">Instagram</a>
+   </div>
+  </div>
+ </div>
+</section>
+
+<div class="ent-rodape"><div class="lpm-wrap">
+ <b>Instituto Educacional Missão Paz</b> · Belo Horizonte/MG · Matrículas 2027 · Sistema IA por Teachy
+</div></div>
+
+</div>
+<script>
+(() => {
+	const alvos = document.querySelectorAll(".lpm-reveal");
+	const mostraTudo = () => {
+		for (const el of alvos) el.classList.add("is-in");
+	};
+	// failsafe: nada de conteudo invisivel se o observer nao disparar
+	setTimeout(mostraTudo, 1200);
+	if (!("IntersectionObserver" in window)) {
+		mostraTudo();
+		return;
+	}
+	const io = new IntersectionObserver(
+		(entradas) => {
+			for (const e of entradas) {
+				if (e.isIntersecting) {
+					e.target.classList.add("is-in");
+					io.unobserve(e.target);
+				}
+			}
+		},
+		{ rootMargin: "0px 0px -12% 0px", threshold: 0.06 },
+	);
+	for (const el of alvos) io.observe(el);
+})();
+</script>
+</body>
+</html>
