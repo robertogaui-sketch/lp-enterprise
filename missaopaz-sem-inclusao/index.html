@@ -144,6 +144,7 @@ body{margin:0}
 .ent-topo__nome{display:none}
 /* telas da família maiores: são prints largos e o texto precisa ser lido */
 @media(min-width:1024px){.lpm-familia2{grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:48px}}
+.ent-gami__t{font:600 22px/1.3 var(--lpm-font-display);color:var(--lpm-navy);margin:0 0 12px}.ent-gami__p{font:400 16px/1.65 var(--lpm-font-body);color:var(--lpm-tinta-suave);margin:0}@media(min-width:1024px){.ent-gami--inv{grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr)}}@media(min-width:1024px){.lpm-f2--jogos{top:505px}}
 </style>
 </head>
 <body>
@@ -319,7 +320,8 @@ body{margin:0}
     <img src="img/formatos/mapa-mental.webp" alt="Mapa mental de classificações do substantivo" loading="lazy">
    </div>
    <div class="lpm-f2 lpm-f2--quiz">
-    <img src="img/formatos/quiz-vivo.webp" alt="Quiz ao vivo com pergunta e alternativas coloridas" loading="lazy">
+    <span class="lpm-f2__chip lpm-f2__chip--vivo">Quem sou eu?</span>
+    <img src="img/tela/quem-sou-eu.webp" alt="Jogo Quem sou eu?: a primeira pista, revelada uma de cada vez" loading="lazy">
    </div>
    <div class="lpm-f2 lpm-f2--video">
     <span class="lpm-f2__chip lpm-f2__chip--alem">Vídeo interativo</span>
@@ -334,7 +336,8 @@ body{margin:0}
     <img src="img/formatos/flashcards.webp" alt="Flashcards de pergunta e resposta" loading="lazy">
    </div>
    <div class="lpm-f2 lpm-f2--jogos">
-    <img src="img/formatos/jogos.webp" alt="Jogos de caça-palavras e palavra-cruzada" loading="lazy">
+    <span class="lpm-f2__chip lpm-f2__chip--alem">Caça-palavras</span>
+    <img src="img/tela/caca-faixa.webp" alt="Caça-palavras de animais da fauna brasileira, com tucano e jabuti já encontrados" loading="lazy">
    </div>
    <div class="lpm-f2 lpm-f2--tutor">
     <img src="img/formatos/tutor.webp" alt="Tutor de revisão em formato de chat com a Lara" loading="lazy">
@@ -352,14 +355,21 @@ body{margin:0}
    <p class="lpm-secao__lead">Antes da prova, o seu filho diz o que precisa estudar e anexa a apostila ou fotos do caderno. A Lara monta o plano a partir desse material, distribui as aulas e as revisões nos dias que ele escolheu, e cada aula usa só a parte daquele dia.</p>
   </div>
   <div class="ent-gami lpm-reveal" style="--d:0.1s">
-   <img src="img/tela/plano-estudos.webp" alt="Formulário do plano de estudos, com o campo para anexar a apostila ou fotos do caderno" loading="lazy">
+   <img src="img/tela/plano-pronto.webp" alt="Plano de estudos pronto: uma aula de 30 minutos por dia, seguindo os capítulos da apostila de frações" loading="lazy">
    <ul>
     <li><b>Prova da escola, vestibular ou estudo pessoal</b>: ele escolhe o objetivo</li>
     <li><b>A apostila ou a foto do caderno</b> viram a base do plano</li>
     <li><b>Os dias e o tempo que ele tem</b>, de 15 minutos a 4 horas por dia</li>
     <li><b>Do jeito que ele gosta de estudar</b>: videoaula, mapa mental, flashcards ou palavra cruzada</li>
-    <li><b>O professor também manda planos</b> para a turma ou para um aluno</li>
+    <li><b>Ele vê o progresso</b> e quantos dias faltam até a prova</li>
    </ul>
+  </div>
+  <div class="ent-gami ent-gami--inv lpm-reveal" style="--d:0.15s">
+   <div>
+    <h3 class="ent-gami__t">Quando ele tem dificuldade, o professor manda o plano.</h3>
+    <p class="ent-gami__p">O professor vê, assunto por assunto, quem ainda não domina o conteúdo e manda para esses alunos um plano de estudos só sobre aquilo, com slides, vídeo, flashcards, mapa mental e jogos. E enxerga também o que o seu filho estudou por conta própria.</p>
+   </div>
+   <img src="img/tela/planos-grupos.webp" alt="Tela do professor: assuntos com o domínio da turma e o envio de plano de estudos para os alunos com dificuldade" loading="lazy">
   </div>
  </div>
 </section>
